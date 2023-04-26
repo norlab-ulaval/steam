@@ -36,9 +36,9 @@ class P2PErrorEvaluator : public Evaluable<Eigen::Matrix<double, 3, 1>> {
   // evaluable
   const Evaluable<InType>::ConstPtr T_rq_;
   // constants
-  Eigen::Matrix<double, 3, 4> D_ = Eigen::Matrix<double, 3, 4>::Zero();
-  Eigen::Vector4d reference_ = Eigen::Vector4d::Constant(1);
-  Eigen::Vector4d query_ = Eigen::Vector4d::Constant(1);
+  Eigen::Matrix<double, 3, 4, Eigen::DontAlign> D_ = Eigen::Matrix<double, 3, 4, Eigen::DontAlign>::Zero();
+  Eigen::Matrix<double, 4, 1, Eigen::DontAlign> reference_ = Eigen::Matrix<double, 4, 1, Eigen::DontAlign>::Constant(1);
+  Eigen::Matrix<double, 4, 1, Eigen::DontAlign> query_ = Eigen::Matrix<double, 4, 1, Eigen::DontAlign>::Constant(1);
 };
 
 P2PErrorEvaluator::Ptr p2pError(
