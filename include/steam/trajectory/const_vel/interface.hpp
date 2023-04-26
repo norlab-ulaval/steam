@@ -46,7 +46,7 @@ class Interface : public traj::Interface {
   void addPriorCostTerms(Problem& problem) const;
 
  private:
-  Eigen::Matrix<double, 6, 1> Qc_diag_;
+  Eigen::Matrix<double, 6, 1, Eigen::DontAlign> Qc_diag_;
   std::map<Time, Variable::Ptr> knot_map_;
   WeightedLeastSqCostTerm<6>::Ptr pose_prior_factor_ = nullptr;
   WeightedLeastSqCostTerm<6>::Ptr vel_prior_factor_ = nullptr;

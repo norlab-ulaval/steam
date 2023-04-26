@@ -7,6 +7,7 @@ option(USE_AMENT "Use ament_cmake to build lgmath for ROS2." ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_compile_options(-march=native -O3 -Wall -pedantic -Wno-unused-function)
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 # define number of threads to be used by OpenMP in steam
 add_definitions(-DSTEAM_DEFAULT_NUM_OPENMP_THREADS=4)
