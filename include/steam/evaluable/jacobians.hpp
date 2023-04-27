@@ -16,7 +16,7 @@ class Jacobians {
   /** \brief Adds a child node (order of addition is preserved) */
   void add(const StateKey &key, const Eigen::MatrixXd &jac) {
     auto iter_success = jacs_.try_emplace(key, jac);
-    if (!iter_success.second) iter_success.first->second += jac;
+    if (!iter_success.second) iter_success.first->second += jac; // this causes a double free exception
   }
 
   void clear() { jacs_.clear(); }
